@@ -74,11 +74,11 @@
 
             <div class="navbar-nav ms-auto mt-3 mt-sm-0"> <!-- currUser stored in local-->
                 <a class="nav-link" href="/listings/new">Airbnb your home</a>
-                <% if (!locals.currUser) { %> 
+                <% if (!currUser) { %> 
                     <a class="nav-link" href="/signup"><b>Sign up</b></a>
                     <a class="nav-link" href="/login"> <b>Log in</b></a>
                 <% } %>
-                <% if (locals.currUser) { %>
+                <% if (currUser) { %>
                     <a class="nav-link" href="/logout"> <b>Log out</b></a>
                 <% } %>
             </div>

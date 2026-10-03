@@ -2,7 +2,8 @@ if(process.env.NODE_ENV != "production"){
     require('dotenv').config()
 }
 
-let dbUrl = process.env.ATLASDB_URL;
+// let dbUrl = process.env.ATLASDB_URL;
+let dbUrl = "mongodb://127.0.0.1:27017/project";
 
 const express = require("express");
 const app = express();
@@ -35,8 +36,8 @@ main().then(() => {
 
 
 async function main(){
-    // await mongoose.connect("mongodb://127.0.0.1:27017/project");
-    await mongoose.connect(dbUrl);
+    await mongoose.connect("mongodb://127.0.0.1:27017/project");
+    // await mongoose.connect(dbUrl);
 }
 
 let port = process.env.PORT || 8080;
@@ -84,6 +85,7 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 app.use((req,res,next) => {
+    //  console.log("CURRENT USER:", req.user);
     res.locals.success = req.flash("success");
     res.locals.error = req.flash("error");
     res.locals.currUser= req.user;

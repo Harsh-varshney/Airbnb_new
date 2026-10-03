@@ -5,7 +5,8 @@ const Listing = require("../models/listing.js");
 const initData = require("./data.js");
 
 
-const dbUrl = process.env.ATLASDB_URL; // CHANGE
+// const dbUrl = process.env.ATLASDB_URL; // CHANGE
+let dbUrl = "mongodb://127.0.0.1:27017/project";
 main().then(() => {
     console.log("connect successfully");
 }).catch(err => console.log(err));

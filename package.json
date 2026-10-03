@@ -1,8 +1,11 @@
 {
   "engines" : {
     "node" : "22.18.0"
-  }
-  ,
+  },
+    "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
   "dependencies": {
     "cloudinary": "^1.37.2",
     "connect-flash": "^0.1.1",

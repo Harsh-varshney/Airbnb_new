@@ -42,7 +42,7 @@ module.exports.login = async(req,res) => {
 }
 
 module.exports.logout = (req,res,next) => {
-    req.logOut((err) => {
+    req.logout((err) => {
         if(err){
             return next(err);
         }

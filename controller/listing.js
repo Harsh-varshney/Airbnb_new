@@ -89,11 +89,11 @@ module.exports.createListing = async (req,res,next) => {
 module.exports.renderEditForm = async (req,res) => {
     let { id } = req.params;
     let listing = await Listing.findById(id);
-    req.flash("success","listing edit successfully");
     if(!listing){//for error flash msg
         req.flash("error","listing you requested for does not exists!");
         return res.redirect("/listings");   
     }
+    // req.flash("success","listing edit successfully");
     res.render("listings/edit.ejs", { listing });
 };
 
